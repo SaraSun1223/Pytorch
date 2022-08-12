@@ -7,6 +7,7 @@ import os
 
 #上面是引入各种包
 
+#新建对象 继承Dataset类
 class Sara_dataset(Dataset):
     def __init__(self, root):
         super(Sara_dataset, self).__init__()
