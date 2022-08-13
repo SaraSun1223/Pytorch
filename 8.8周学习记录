@@ -1,0 +1,12 @@
+#Loss function meaning
+https://blog.csdn.net/m0_51816252/article/details/125118548?ops_request_misc=&request_id=&biz_id=102&utm_term=%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E8%AE%BE%E5%AE%9A%E7%9A%84loss%E5%87%BD%E6%95%B0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-125118548.142^v40^pc_search_integral,185^v2^control&spm=1018.2226.3001.4187
+
+https://blog.csdn.net/weixin_36670529/article/details/107247442
+
+#神经网络自定义损失函数
+https://blog.csdn.net/gaoyueace/article/details/79027616?ops_request_misc=&request_id=&biz_id=102&utm_term=%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E8%AE%BE%E5%AE%9A%E7%9A%84loss%E5%87%BD%E6%95%B0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-3-79027616.142^v40^pc_search_integral,185^v2^control&spm=1018.2226.3001.4187
+#定义预测多了和预测少了的成本
+loss_less = 10 #预测值少于真实值，损失10
+loss_more = 1 #预测值多余真实值，损失1
+loss = tf.reduce_sum(tf.where(tf.greater(y, y_), (y-y_)*loss_more, (y_-y)*loss_less)) #损失函数，所有训练样本的损失总和
+train_step = tf.train.AdamOptimizer(0.001).minimize(loss) #反向传播算法，优化权重参数
