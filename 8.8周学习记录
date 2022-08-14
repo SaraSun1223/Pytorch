@@ -10,3 +10,7 @@ loss_less = 10 #预测值少于真实值，损失10
 loss_more = 1 #预测值多余真实值，损失1
 loss = tf.reduce_sum(tf.where(tf.greater(y, y_), (y-y_)*loss_more, (y_-y)*loss_less)) #损失函数，所有训练样本的损失总和
 train_step = tf.train.AdamOptimizer(0.001).minimize(loss) #反向传播算法，优化权重参数
+
+
+#Facol loss（二分类&多分类）
+https://zhuanlan.zhihu.com/p/308290543
